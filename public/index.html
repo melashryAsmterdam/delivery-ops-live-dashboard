@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly Delivery Operations — Live</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Weekly Delivery Operations Dashboard</h1>
+        <div class="sub"><span class="live"><span class="dot"></span> Live from Jira</span></div>
+      </div>
+      <div class="actions">
+        <span class="refreshed" id="refreshed">—</span>
+        <button class="refresh" id="refreshBtn" onclick="load(true)">
+          <span class="ico">&#8635;</span> Refresh
+        </button>
+      </div>
+    </header>
+    <div class="scope">
+      Scope: <b>Core</b> · <b>Labs</b> · <b>Eco</b>
+      &nbsp;|&nbsp; Types = <b>Epics only</b> · Numbers pulled live from webook.com Jira on each refresh.
+    </div>
+
+    <div id="errbox"></div>
+    <div id="content">
+      <div class="loading">Loading live data from Jira…</div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
