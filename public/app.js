@@ -110,10 +110,20 @@ function render(d) {
   html += card("accent-amber", "Shipped", d.shippedThisWeek == null ? "—" : d.shippedThisWeek, "this wk", "epics to Done");
   html += "</div>";
 
+  var scope = (d.scope || []).join(", ");
+  function jqlUrl(q) { return BROWSE + "/issues/?jql=" + encodeURIComponent(q); }
+  var EPICQ = "project in (" + scope + ") AND issuetype = Epic";
+  var pipeJql = EPICQ + ' AND status in ("Discovery", "Three Amigos Alignment", "Solution Design") ORDER BY status ASC';
+  var rollJql = EPICQ + ' AND status in ("Ready to Deploy", "A/B Testing") ORDER BY status ASC';
+  var defKeys = (defects.rows || []).map(function (r) { return r.key; });
+  var defJql = defKeys.length
+    ? "parent in (" + defKeys.join(", ") + ') AND issuetype in (Bug, Defect) AND statusCategory != Done AND status != "Defect Rejected" ORDER BY status ASC'
+    : "project in (" + scope + ") AND issuetype in (Bug, Defect) AND statusCategory != Done";
+  var mLink = "text-decoration:none;color:inherit;cursor:pointer";
   html += '<div class="ministats">' +
-    '<div class="ministat"><span class="ml">Pipeline (pre-dev)</span><span class="mv">' + pipeline.total + "</span></div>" +
-    '<div class="ministat"><span class="ml">Rollout</span><span class="mv">' + rollout.total + "</span></div>" +
-    '<div class="ministat"><span class="ml">Open defects</span><span class="mv">' + (defects.totalOpen || 0) + "</span></div>" +
+    '<a class="ministat" href="' + jqlUrl(pipeJql) + '" target="_blank" rel="noopener" title="Open these epics in Jira" style="' + mLink + '"><span class="ml">Pipeline (pre-dev) ↗</span><span class="mv">' + pipeline.total + "</span></a>" +
+    '<a class="ministat" href="' + jqlUrl(rollJql) + '" target="_blank" rel="noopener" title="Open these epics in Jira" style="' + mLink + '"><span class="ml">Rollout ↗</span><span class="mv">' + rollout.total + "</span></a>" +
+    '<a class="ministat" href="' + jqlUrl(defJql) + '" target="_blank" rel="noopener" title="Open these defects in Jira" style="' + mLink + '"><span class="ml">Open defects ↗</span><span class="mv">' + (defects.totalOpen || 0) + "</span></a>" +
     "</div>";
 
   // ---- Pipeline (Discovery band) ----
