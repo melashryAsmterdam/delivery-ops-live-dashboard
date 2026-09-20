@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in — Weekly Delivery Operations</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .loginwrap { max-width: 380px; margin: 12vh auto; padding: 0 20px; }
+    .loginbox { background: #fff; border: 1px solid #e6e8eb; border-radius: 14px; padding: 26px 24px; box-shadow: 0 1px 3px rgba(16,24,40,.06); }
+    .loginbox h1 { font-size: 18px; margin: 0 0 4px; }
+    .loginbox p { color: #6b7280; font-size: 13px; margin: 0 0 18px; }
+    .loginbox label { display: block; font-size: 12px; font-weight: 600; color: #4b5563; margin: 0 0 6px; }
+    .loginbox input { width: 100%; padding: 10px 12px; border: 1px solid #d7dbe0; border-radius: 8px; font-size: 14px; }
+    .loginbox input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+    .loginbox button { width: 100%; margin-top: 14px; background: #2563eb; color: #fff; border: none; font-size: 14px; font-weight: 600; padding: 11px; border-radius: 8px; cursor: pointer; }
+    .loginbox button:hover { background: #1d4ed8; }
+    .loginbox button:disabled { opacity: .6; cursor: default; }
+    .loginerr { color: #b91c1c; font-size: 12.5px; margin-top: 12px; min-height: 16px; }
+  </style>
+</head>
+<body>
+  <div class="loginwrap">
+    <div class="loginbox">
+      <h1>Weekly Delivery Operations</h1>
+      <p>Enter the team password to view the dashboard.</p>
+      <form id="f">
+        <label for="pw">Password</label>
+        <input id="pw" type="password" autocomplete="current-password" autofocus>
+        <button id="btn" type="submit">Sign in</button>
+        <div class="loginerr" id="err"></div>
+      </form>
+    </div>
+  </div>
+  <script>
+    var f = document.getElementById("f"), pw = document.getElementById("pw"),
+        btn = document.getElementById("btn"), err = document.getElementById("err");
+    f.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      err.textContent = "";
+      btn.disabled = true; btn.textContent = "Signing in…";
+      try {
+        var res = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ password: pw.value })
+        });
+        var data = await res.json().catch(function () { return {}; });
+        if (res.ok && data.ok) { window.location.replace("/"); return; }
+        err.textContent = data.error || "Sign in failed.";
+      } catch (e2) {
+        err.textContent = "Network error. Try again.";
+      }
+      btn.disabled = false; btn.textContent = "Sign in";
+    });
+  </script>
+</body>
+</html>
