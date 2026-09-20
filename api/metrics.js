@@ -1,1 +1,175 @@
-Ly8gVmVyY2VsIHNlcnZlcmxlc3MgZnVuY3Rpb24g4oCUIGNvbXB1dGVzIGxpdmUgV2Vla2x5IERlbGl2ZXJ5IE9wZXJhdGlvbnMgbWV0cmljcwovLyBzdHJhaWdodCBmcm9tIHdlYm9vay5jb20gSmlyYSwgc2VydmVyLXNpZGUgKGNyZWRlbnRpYWxzIG5ldmVyIHJlYWNoIHRoZSBicm93c2VyKS4KLy8KLy8gUmVxdWlyZWQgZW52aXJvbm1lbnQgdmFyaWFibGVzIChzZXQgaW4gVmVyY2VsIOKGkiBQcm9qZWN0IOKGkiBTZXR0aW5ncyDihpIgRW52aXJvbm1lbnQgVmFyaWFibGVzKToKLy8gICBKSVJBX0JBU0VfVVJMICAgZS5nLiBodHRwczovL3dlYm9va2NvbS5hdGxhc3NpYW4ubmV0Ci8vICAgSklSQV9FTUFJTCAgICAgIHRoZSBBdGxhc3NpYW4gYWNjb3VudCBlbWFpbCB0aGUgQVBJIHRva2VuIGJlbG9uZ3MgdG8KLy8gICBKSVJBX0FQSV9UT0tFTiAgYW4gQXRsYXNzaWFuIEFQSSB0b2tlbiAoaWQuYXRsYXNzaWFuLmNvbSDihpIgU2VjdXJpdHkg4oaSIEFQSSB0b2tlbnMpCgpjb25zdCBQUk9KRUNUUyA9IFsiQ0JQQyIsICJDU0QiLCAiQ0hPTCIsICJDUiIsICJDQ1MiLCAiTFRSRiIsICJFU0wiLCAiSU5DRU4iLCAiUkVDTyIsICJGQU4iXTsKY29uc3QgVEVBTSA9IHsKICBDQlBDOiAiQ29yZSIsIENTRDogIkNvcmUiLCBDSE9MOiAiQ29yZSIsIENSOiAiQ29yZSIsIENDUzogIkNvcmUiLAogIExUUkY6ICJMYWJzIiwKICBFU0w6ICJFY28iLCBJTkNFTjogIkVjbyIsIFJFQ086ICJFY28iLCBGQU46ICJFY28iLAp9Owpjb25zdCBXSVBfU1RBVFVTRVMgPSBbIlJlYWR5IGZvciBEZXZlbG9wbWVudCIsICJJbiBEZXZlbG9wbWVudCIsICJSZWFkeSBmb3IgVGVzdGluZyIsICJJbiBUZXN0aW5nIiwgIkJsb2NrZWQgLSBCdWcgRml4aW5nIl07CmNvbnN0IFBJUEVMSU5FX1NUQVRVU0VTID0gWyJEaXNjb3ZlcnkiLCAiVGhyZWUgQW1pZ29zIEFsaWdubWVudCIsICJTb2x1dGlvbiBEZXNpZ24iXTsKY29uc3QgUk9MTE9VVF9TVEFUVVNFUyA9IFsiUmVhZHkgdG8gRGVwbG95IiwgIkEvQiBUZXN0aW5nIl07CmNvbnN0IFdJUF9DT0xPUlMgPSB7CiAgIlJlYWR5IGZvciBEZXZlbG9wbWVudCI6ICIjMjU2M2ViIiwKICAiSW4gRGV2ZWxvcG1lbnQiOiAiI2Q5NzcwNiIsCiAgIlJlYWR5IGZvciBUZXN0aW5nIjogIiM3YzNhZWQiLAogICJJbiBUZXN0aW5nIjogIiMwZDk0ODgiLAogICJCbG9ja2VkIC0gQnVnIEZpeGluZyI6ICIjZGMyNjI2IiwKfTsKCmNvbnN0IHByb2pMaXN0ID0gUFJPSkVDVFMuam9pbigiLCAiKTsKY29uc3QgcXVvdGVkID0gKGFycikgPT4gYXJyLm1hcCgocykgPT4gJyInICsgcyArICciJykuam9pbigiLCAiKTsKY29uc3QgdGVhbU9mID0gKGtleSkgPT4gVEVBTVtTdHJpbmcoa2V5KS5zcGxpdCgiLSIpWzBdXSB8fCAiT3RoZXIiOwoKLy8gUmVzcG9uZCB3aXRoIHJhdyBOb2RlIGh0dHAgbWV0aG9kcyBvbmx5LCBzbyB3ZSBuZXZlciBkZXBlbmQgb24gZnJhbWV3b3JrCi8vIGhlbHBlcnMgKHJlcy5zdGF0dXMvcmVzLmpzb24pIHRoYXQgbWF5IGJlIGFic2VudCBpbiBzb21lIHJ1bnRpbWVzLgpmdW5jdGlvbiBzZW5kKHJlcywgY29kZSwgb2JqKSB7CiAgcmVzLnN0YXR1c0NvZGUgPSBjb2RlOwogIHJlcy5zZXRIZWFkZXIoIkNvbnRlbnQtVHlwZSIsICJhcHBsaWNhdGlvbi9qc29uOyBjaGFyc2V0PXV0Zi04Iik7CiAgcmVzLnNldEhlYWRlcigiQ2FjaGUtQ29udHJvbCIsICJuby1zdG9yZSIpOwogIHJlcy5lbmQoSlNPTi5zdHJpbmdpZnkob2JqKSk7Cn0KCmZ1bmN0aW9uIGF1dGhIZWFkZXIoKSB7CiAgY29uc3QgZW1haWwgPSBwcm9jZXNzLmVudi5KSVJBX0VNQUlMIHx8ICIiOwogIGNvbnN0IHRva2VuID0gcHJvY2Vzcy5lbnYuSklSQV9BUElfVE9LRU4gfHwgIiI7CiAgcmV0dXJuICJCYXNpYyAiICsgQnVmZmVyLmZyb20oZW1haWwgKyAiOiIgKyB0b2tlbikudG9TdHJpbmcoImJhc2U2NCIpOwp9CmZ1bmN0aW9uIGJhc2VVcmwoKSB7CiAgcmV0dXJuIChwcm9jZXNzLmVudi5KSVJBX0JBU0VfVVJMIHx8ICIiKS5yZXBsYWNlKC9cLyskLywgIiIpOwp9Cgphc3luYyBmdW5jdGlvbiBqaXJhRmV0Y2gocGF0aCwgYm9keSkgewogIGlmICh0eXBlb2YgZmV0Y2ggIT09ICJmdW5jdGlvbiIpIHRocm93IG5ldyBFcnJvcigiZ2xvYmFsIGZldGNoIHVuYXZhaWxhYmxlIChuZWVkcyBOb2RlIDE4KyIpOwogIGNvbnN0IHJlcyA9IGF3YWl0IGZldGNoKGJhc2VVcmwoKSArIHBhdGgsIHsKICAgIG1ldGhvZDogIlBPU1QiLAogICAgaGVhZGVyczogewogICAgICBBdXRob3JpemF0aW9uOiBhdXRoSGVhZGVyKCksCiAgICAgICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgIEFjY2VwdDogImFwcGxpY2F0aW9uL2pzb24iLAogICAgfSwKICAgIGJvZHk6IEpTT04uc3RyaW5naWZ5KGJvZHkpLAogIH0pOwogIGlmICghcmVzLm9rKSB7CiAgICBjb25zdCB0ZXh0ID0gYXdhaXQgcmVzLnRleHQoKTsKICAgIHRocm93IG5ldyBFcnJvcigiSmlyYSAiICsgcmVzLnN0YXR1cyArICIg4oCUICIgKyB0ZXh0LnNsaWNlKDAsIDMwMCkpOwogIH0KICByZXR1cm4gcmVzLmpzb24oKTsKfQovLyBOZXcgSmlyYSBDbG91ZCBzZWFyY2ggKENIQU5HRS0yMDQ2KTogL3Jlc3QvYXBpLzMvc2VhcmNoL2pxbCByZXR1cm5zIGlzc3VlcyAobm8gdG90YWwpOwovLyBjb3VudHMgY29tZSBmcm9tIHRoZSBkZWRpY2F0ZWQgYXBwcm94aW1hdGUtY291bnQgZW5kcG9pbnQuCmFzeW5jIGZ1bmN0aW9uIGppcmEoanFsLCBmaWVsZHMsIG1heFJlc3VsdHMpIHsKICByZXR1cm4gamlyYUZldGNoKCIvcmVzdC9hcGkvMy9zZWFyY2gvanFsIiwgeyBqcWwsIG1heFJlc3VsdHM6IG1heFJlc3VsdHMgPT0gbnVsbCA/IDEwMCA6IG1heFJlc3VsdHMsIGZpZWxkczogZmllbGRzIHx8IFtdIH0pOwp9CmFzeW5jIGZ1bmN0aW9uIGNvdW50T2YoanFsKSB7CiAgY29uc3QgaiA9IGF3YWl0IGppcmFGZXRjaCgiL3Jlc3QvYXBpLzMvc2VhcmNoL2FwcHJveGltYXRlLWNvdW50IiwgeyBqcWwgfSk7CiAgcmV0dXJuIGogJiYgdHlwZW9mIGouY291bnQgPT09ICJudW1iZXIiID8gai5jb3VudCA6IDA7Cn0KCi8vIC0tLS0tIFN1bmRheS1hbmNob3JlZCB3ZWVrcyBpbiBBc2lhL1JpeWFkaCAoVVRDKzMpLCBkYXktcHJlY2lzaW9uIC0tLS0KY29uc3QgT0ZGU0VUX01TID0gMyAqIDM2MDAgKiAxMDAwOwpjb25zdCBNT05USFMgPSBbIkphbiIsICJGZWIiLCAiTWFyIiwgIkFwciIsICJNYXkiLCAiSnVuIiwgIkp1bCIsICJBdWciLCAiU2VwIiwgIk9jdCIsICJOb3YiLCAiRGVjIl07CmZ1bmN0aW9uIG5vd1JpeWFkaCgpIHsgcmV0dXJuIG5ldyBEYXRlKERhdGUubm93KCkgKyBPRkZTRVRfTVMpOyB9CmZ1bmN0aW9uIHdlZWtTdGFydChkKSB7CiAgY29uc3QgeCA9IG5ldyBEYXRlKGQpOwogIHguc2V0VVRDRGF0ZSh4LmdldFVUQ0RhdGUoKSAtIHguZ2V0VVRDRGF5KCkpOwogIHguc2V0VVRDSG91cnMoMCwgMCwgMCwgMCk7CiAgcmV0dXJuIHg7Cn0KZnVuY3Rpb24gYWRkRGF5cyhkLCBuKSB7IGNvbnN0IHggPSBuZXcgRGF0ZShkKTsgeC5zZXRVVENEYXRlKHguZ2V0VVRDRGF0ZSgpICsgbik7IHJldHVybiB4OyB9CmZ1bmN0aW9uIHltZChkKSB7IHJldHVybiBkLnRvSVNPU3RyaW5nKCkuc2xpY2UoMCwgMTApOyB9CmZ1bmN0aW9uIHdlZWtMYWJlbChkKSB7IHJldHVybiBkLmdldFVUQ0RhdGUoKSArICIgIiArIE1PTlRIU1tkLmdldFVUQ01vbnRoKCldOyB9CmZ1bmN0aW9uIG1lZGlhbihudW1zKSB7CiAgaWYgKCFudW1zLmxlbmd0aCkgcmV0dXJuIG51bGw7CiAgY29uc3QgcyA9IFsuLi5udW1zXS5zb3J0KChhLCBiKSA9PiBhIC0gYik7CiAgY29uc3QgbSA9IE1hdGguZmxvb3Iocy5sZW5ndGggLyAyKTsKICByZXR1cm4gcy5sZW5ndGggJSAyID8gc1ttXSA6IE1hdGgucm91bmQoKHNbbSAtIDFdICsgc1ttXSkgLyAyKTsKfQoKbW9kdWxlLmV4cG9ydHMgPSBhc3luYyAocmVxLCByZXMpID0+IHsKICB0cnkgewogICAgY29uc3Qgb3V0ID0geyBnZW5lcmF0ZWRBdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpLCBzY29wZTogUFJPSkVDVFMsIGJyb3dzZUJhc2U6IGJhc2VVcmwoKSwgZXJyb3JzOiBbXSB9OwogICAgY29uc3QgZ3VhcmQgPSBhc3luYyAobmFtZSwgZm4pID0+IHsKICAgICAgdHJ5IHsgcmV0dXJuIGF3YWl0IGZuKCk7IH0KICAgICAgY2F0Y2ggKGUpIHsgb3V0LmVycm9ycy5wdXNoKG5hbWUgKyAiOiAiICsgKGUgJiYgZS5tZXNzYWdlID8gZS5tZXNzYWdlIDogU3RyaW5nKGUpKSk7IHJldHVybiBudWxsOyB9CiAgICB9OwoKICAgIGlmICghYmFzZVVybCgpIHx8ICFwcm9jZXNzLmVudi5KSVJBX0VNQUlMIHx8ICFwcm9jZXNzLmVudi5KSVJBX0FQSV9UT0tFTikgewogICAgICBzZW5kKHJlcywgNTAwLCB7IGVycm9yOiAiSmlyYSBpcyBub3QgY29uZmlndXJlZC4gU2V0IEpJUkFfQkFTRV9VUkwsIEpJUkFfRU1BSUwgYW5kIEpJUkFfQVBJX1RPS0VOIGluIHRoZSBWZXJjZWwgcHJvamVjdCBzZXR0aW5ncywgdGhlbiByZWRlcGxveS4iIH0pOwogICAgICByZXR1cm47CiAgICB9CgogICAgY29uc3QgRVBJQyA9IGBwcm9qZWN0IGluICgke3Byb2pMaXN0fSkgQU5EIGlzc3VldHlwZSA9IEVwaWNgOwoKICAgIC8vIFdJUCDigJQgb25lIHNlYXJjaCwgZHJpdmVzIHRoZSBLUEsIHRoZSBieS1zdGF0dXMgY2hhcnQsIHRoZSBieS10ZWFtIHJvbGwtdXAgYW5kIHRoZSB0YWJsZS4KICAgIGF3YWl0IGd1YXJkKCJ3aXAiLCBhc3luYyAoKSA9PiB7CiAgICAgIGNvbnN0IHIgPSBhd2FpdCBqaXJhKGAke0VQSUN9IEFORCBzdGF0dXMgaW4gKCR7cXVvdGVkKFdJUF9TVEFUVVNFUyl9KSBPUkRFUiBCWSBzdGF0dXMgQVNDYCwgWyJzdW1tYXJ5IiwgInN0YXR1cyJdLCAxMDApOwogICAgICBjb25zdCBpc3N1ZXMgPSByLmlzc3VlcyB8fCBbXTsKICAgICAgY29uc3QgYnlTdGF0dXMgPSBXSVBfU1RBVFVTRVMubWFwKChzKSA9PiAoewogICAgICAgIHN0YXR1czogcywKICAgICAgICBjb2xvcjogV0lQX0NPTE9SU1tzXSwKICAgICAgICBjb3VudDogaXNzdWVzLmZpbHRlcigoaSkgPT4gKCgoaS5maWVsZHMuc3RhdHVzICYmIGkuZmllbGRzLnN0YXR1cy5uYW1lKSB8fCAiIikudG9Mb3dlckNhc2UoKSA9PT0gcy50b0xvd2VyQ2FzZSgpKSkubGVuZ3RoLAogICAgICB9KSk7CiAgICAgIGNvbnN0IGJ5VGVhbSA9IHt9OwogICAgICBjb25zdCBlcGljcyA9IGlzc3Vlcy5tYXAoKGkpID0+IHsKICAgICAgICBjb25zdCB0ZWFtID0gdGVhbU9mKGkua2V5KTsKICAgICAgICBieVRlYW1bdGVhbV0gPSBieVRlYW1bdGVhbV0gfHwgeyB3aXA6IDAsIGJsb2NrZWQ6IDAgfTsKICAgICAgICBieVRlYW1bdGVhbV0ud2lwKys7CiAgICAgICAgcmV0dXJuIHsga2V5OiBpLmtleSwgc3VtbWFyeTogaS5maWVsZHMuc3VtbWFyeSwgc3RhdHVzOiBpLmZpZWxkcy5zdGF0dXMubmFtZSwgdGVhbSB9OwogICAgICB9KTsKICAgICAgb3V0LndpcCA9IHsgdG90YWw6IGlzc3Vlcy5sZW5ndGgsIGJ5U3RhdHVzLCBieVRlYW0sIGVwaWNzIH07CiAgICB9KTsKCiAgICAvLyBQaXBlbGluZSAvIFJvbGxvdXQKICAgIGF3YWl0IGd1YXJkKCJwaXBlbGluZSIsIGFzeW5jICgpID0+IHsKICAgICAgb3V0LnBpcGVsaW5lID0geyB0b3RhbDogYXdhaXQgY291bnRPZihgJHtFUElDfSBBTkQgc3RhdHVzIGluICgke3F1b3RlZChQSVBFTElORV9TVEFUVVNFUyl9KWApIH07CiAgICB9KTsKICAgIGF3YWl0IGd1YXJkKCJyb2xsb3V0IiwgYXN5bmMgKCkgPT4gewogICAgICBjb25zdCByID0gYXdhaXQgamlyYShgJHtFUElDfSBBTkQgc3RhdHVzIGluICgke3F1b3RlZChST0xMT1VUX1NUQVRVU0VTKX0pIE9SREVSIEJZIHN0YXR1cyBBU0NgLCBbInN1bW1hcnkiLCAic3RhdHVzIl0sIDEwMCk7CiAgICAgIGNvbnN0IGVwaWNzID0gKHIuaXNzdWVzIHx8IFtdKS5tYXAoKGkpID0+ICh7IGtleTogaS5rZXksIHN1bW1hcnk6IGkuZmllbGRzLnN1bW1hcnksIHN0YXR1czogaS5maWVsZHMuc3RhdHVzLm5hbWUsIHRlYW06IHRlYW1PZihpLmtleSkgfSkpOwogICAgICBvdXQucm9sbG91dCA9IHsgdG90YWw6IGVwaWNzLmxlbmd0aCwgZXBpY3MgfTsKICAgIH0pOwoKICAgIC8vIEJsb2NrZXJzIOKAlCBmbGFnZ2VkIG9yICJibG9ja2VkIiBsYWJlbDsgcmV0cnkgd2l0aG91dCBmbGFnZ2VkIGlmIHRoZSBmaWVsZCByZWplY3RzLgogICAgYXdhaXQgZ3VhcmQoImJsb2NrZXJzIiwgYXN5bmMgKCkgPT4gewogICAgICBjb25zdCB3aXRoRmxhZyA9IGAke0VQSUN9IEFORCBzdGF0dXNDYXRlZ29yeSAhPSBEb25lIEFORCAobGFiZWxzIGluIChibG9ja2VkLCBCbG9ja2VkKSBPUiBmbGFnZ2VkID0gSW1wZWRpbWVudClgOwogICAgICBjb25zdCBsYWJlbHNPbmx5ID0gYCR7RVBJQ30gQU5EIHN0YXR1c0NhdGVnb3J5ICE9IERvbmUgQU5EIGxhYmVscyBpbiAoYmxvY2tlZCwgQmxvY2tlZClgOwogICAgICBsZXQgcjsKICAgICAgdHJ5IHsgciA9IGF3YWl0IGppcmEod2l0aEZsYWcgKyAiIE9SREVSIEJZIGNyZWF0ZWQgQVNDIiwgWyJzdW1tYXJ5IiwgInN0YXR1cyJdLCAxMDApOyB9CiAgICAgIGNhdGNoIChfKSB7IHIgPSBhd2FpdCBqaXJhKGxhYmVsc09ubHkgKyAiIE9SREVSIEJZIGNyZWF0ZWQgQVNDIiwgWyJzdW1tYXJ5IiwgInN0YXR1cyJdLCAxMDApOyB9CiAgICAgIGNvbnN0IGVwaWNzID0gKHIuaXNzdWVzIHx8IFtdKS5tYXAoKGkpID0+ICh7IGtleTogaS5rZXksIHN1bW1hcnk6IGkuZmllbGRzLnN1bW1hcnksIHN0YXR1czogaS5maWVsZHMuc3RhdHVzLm5hbWUsIHRlYW06IHRlYW1PZihpLmtleSkgfSkpOwogICAgICBpZiAob3V0LndpcCAmJiBvdXQud2lwLmJ5VGVhbSkgZXBpY3MuZm9yRWFjaCgoZSkgPT4geyBpZiAob3V0LndpcC5ieVRlYW1bZS50ZWFtXSkgb3V0LndpcC5ieVRlYW1bZS50ZWFtXS5ibG9ja2VkKys7IH0pOwogICAgICBvdXQuYmxvY2tlcnMgPSB7IHRvdGFsOiBlcGljcy5sZW5ndGgsIGVwaWNzIH07CiAgICB9KTsKCiAgICAvLyBUaHJvdWdoaXB1dCDigJQgOCBTdW5kYXkgd2Vla3M7IG1lZGlhbiBvdmVyIHRoZSA3IGNvbXBsZXRlZCBvbmVzOyBjdXJyZW50IHdlZWsgPSBzaGlwcGVkLXRoaXMtd2Vlay4KICAgIGF3YWl0IGd1YXJkKCJ0aHJvdWdocHV0IiwgYXN5bmMgKCkgPT4gewogICAgICBjb25zdCBjdXJTdGFydCA9IHdlZWtTdGFydChub3dSaXlhZGgoKSk7CiAgICAgIGNvbnN0IHdlZWtzID0gW107CiAgICAgIGZvciAobGV0IGkgPSA3OyBpID49IDA7IGktLSkgewogICAgICAgIGNvbnN0IHN0YXJ0ID0gYWRkRGF5cyhjdXJTdGFydCwgLTcgKiBpKTsKICAgICAgICBjb25zdCBlbmQgPSBhZGREYXlzKHN0YXJ0LCA3KTsKICAgICAgICB3ZWVrcy5wdXNoKHsgc3RhcnQsIGVuZCB9KTsKICAgICAgfQogICAgICBjb25zdCB2YWx1ZXMgPSBbXTsKICAgICAgZm9yIChjb25zdCB3IG9mIHdlZWtzKSB7CiAgICAgICAgICB2YWx1ZXMucHVzaChhd2FpdCBjb3VudE9mKGAke0VQSUN9IEFORCBzdGF0dXMgQ0hBTkdFRCBUTyAiRG9uZSIgRFVSSU5HICgiJHt5bWQody5zdGFydCl9IiwgIiR7eW1kKHcuZW5kKX0iKWApKTsKICAgICAgfQogICAgICBvdXQudGhyb3VnaHB1dCA9IHsKICAgICAgICBsYWJlbHM6IHdlZWtzLm1hcCgodykgPT4gd2Vla0xhYmVsKHcuc3RhcnQpKSwKICAgICAgICB2YWx1ZXMsCiAgICAgICAgbWVkaWFuOiBtZWRpYW4odmFsdWVzLnNsaWNlKDAsIDcpKSwKICAgICAgfTsKICAgICAgb3V0LnNoaXBwZWRUaGlzV2VlayA9IHZhbHVlc1t2YWx1ZXMubGVuZ3RoIC0gMV07CiAgICB9KTsKCiAgICBzZW5kKHJlcywgMjAwLCBvdXQpOwogIH0gY2F0Y2ggKGUpIHsKICAgIC8vIE5ldmVyIGNyYXNoIHRoZSBpbnZvY2F0aW9uIOKAlCBzdXJmYWNlIHRoZSByZWFzb24gYXMgcmVhZGFibGUgSlNPTi4KICAgIHNlbmQocmVzLCA1MDAsIHsgZXJyb3I6ICJVbmhhbmRsZWQ6ICIgKyAoZSAmJiBlLm1lc3NhZ2UgPyBlLm1lc3NhZ2UgOiBTdHJpbmcoZSkpLCBzdGFjazogZSAmJiBlLnN0YWNrID8gU3RyaW5nKGUuc3RhY2spLnNwbGl0KCJcbiIpLnNsaWNlKDAsIDQpIDogdW5kZWZpbmVkIH0pOwogIH0KfTsK
+// Vercel serverless function — computes live Weekly Delivery Operations metrics
+// straight from webook.com Jira, server-side (credentials never reach the browser).
+//
+// Required environment variables (set in Vercel → Project → Settings → Environment Variables):
+//   JIRA_BASE_URL   e.g. https://webookcom.atlassian.net
+//   JIRA_EMAIL      the Atlassian account email the API token belongs to
+//   JIRA_API_TOKEN  an Atlassian API token (id.atlassian.com → Security → API tokens)
+
+const PROJECTS = ["CBPC", "CSD", "CHOL", "CR", "CCS", "LTRF", "ESL", "INCEN", "RECO", "FAN"];
+const TEAM = {
+  CBPC: "Core", CSD: "Core", CHOL: "Core", CR: "Core", CCS: "Core",
+  LTRF: "Labs",
+  ESL: "Eco", INCEN: "Eco", RECO: "Eco", FAN: "Eco",
+};
+const WIP_STATUSES = ["Ready for Development", "In Development", "Ready for Testing", "In Testing", "Blocked - Bug Fixing"];
+const PIPELINE_STATUSES = ["Discovery", "Three Amigos Alignment", "Solution Design"];
+const ROLLOUT_STATUSES = ["Ready to Deploy", "A/B Testing"];
+const WIP_COLORS = {
+  "Ready for Development": "#2563eb",
+  "In Development": "#d97706",
+  "Ready for Testing": "#7c3aed",
+  "In Testing": "#0d9488",
+  "Blocked - Bug Fixing": "#dc2626",
+};
+
+const projList = PROJECTS.join(", ");
+const quoted = (arr) => arr.map((s) => '"' + s + '"').join(", ");
+const teamOf = (key) => TEAM[String(key).split("-")[0]] || "Other";
+
+// Respond with raw Node http methods only, so we never depend on framework
+// helpers (res.status/res.json) that may be absent in some runtimes.
+function send(res, code, obj) {
+  res.statusCode = code;
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Cache-Control", "no-store");
+  res.end(JSON.stringify(obj));
+}
+
+function authHeader() {
+  const email = process.env.JIRA_EMAIL || "";
+  const token = process.env.JIRA_API_TOKEN || "";
+  return "Basic " + Buffer.from(email + ":" + token).toString("base64");
+}
+function baseUrl() {
+  return (process.env.JIRA_BASE_URL || "").replace(/\/+$/, "");
+}
+
+async function jiraFetch(path, body) {
+  if (typeof fetch !== "function") throw new Error("global fetch unavailable (needs Node 18+)");
+  const res = await fetch(baseUrl() + path, {
+    method: "POST",
+    headers: {
+      Authorization: authHeader(),
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error("Jira " + res.status + " — " + text.slice(0, 300));
+  }
+  return res.json();
+}
+// New Jira Cloud search (CHANGE-2046): /rest/api/3/search/jql returns issues (no total);
+// counts come from the dedicated approximate-count endpoint.
+async function jira(jql, fields, maxResults) {
+  return jiraFetch("/rest/api/3/search/jql", { jql, maxResults: maxResults == null ? 100 : maxResults, fields: fields || [] });
+}
+async function countOf(jql) {
+  const j = await jiraFetch("/rest/api/3/search/approximate-count", { jql });
+  return j && typeof j.count === "number" ? j.count : 0;
+}
+
+// ---- Sunday-anchored weeks in Asia/Riyadh (UTC+3), day-precision ----
+const OFFSET_MS = 3 * 3600 * 1000;
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function nowRiyadh() { return new Date(Date.now() + OFFSET_MS); }
+function weekStart(d) {
+  const x = new Date(d);
+  x.setUTCDate(x.getUTCDate() - x.getUTCDay());
+  x.setUTCHours(0, 0, 0, 0);
+  return x;
+}
+function addDays(d, n) { const x = new Date(d); x.setUTCDate(x.getUTCDate() + n); return x; }
+function ymd(d) { return d.toISOString().slice(0, 10); }
+function weekLabel(d) { return d.getUTCDate() + " " + MONTHS[d.getUTCMonth()]; }
+function median(nums) {
+  if (!nums.length) return null;
+  const s = [...nums].sort((a, b) => a - b);
+  const m = Math.floor(s.length / 2);
+  return s.length % 2 ? s[m] : Math.round((s[m - 1] + s[m]) / 2);
+}
+
+module.exports = async (req, res) => {
+  try {
+    const out = { generatedAt: new Date().toISOString(), scope: PROJECTS, browseBase: baseUrl(), errors: [] };
+    const guard = async (name, fn) => {
+      try { return await fn(); }
+      catch (e) { out.errors.push(name + ": " + (e && e.message ? e.message : String(e))); return null; }
+    };
+
+    if (!baseUrl() || !process.env.JIRA_EMAIL || !process.env.JIRA_API_TOKEN) {
+      send(res, 500, { error: "Jira is not configured. Set JIRA_BASE_URL, JIRA_EMAIL and JIRA_API_TOKEN in the Vercel project settings, then redeploy." });
+      return;
+    }
+
+    const EPIC = `project in (${projList}) AND issuetype = Epic`;
+
+    // WIP — one search, drives the KPI, the by-status chart, the by-team roll-up and the table.
+    await guard("wip", async () => {
+      const r = await jira(`${EPIC} AND status in (${quoted(WIP_STATUSES)}) ORDER BY status ASC`, ["summary", "status"], 100);
+      const issues = r.issues || [];
+      const byStatus = WIP_STATUSES.map((s) => ({
+        status: s,
+        color: WIP_COLORS[s],
+        count: issues.filter((i) => (((i.fields.status && i.fields.status.name) || "").toLowerCase() === s.toLowerCase())).length,
+      }));
+      const byTeam = {};
+      const epics = issues.map((i) => {
+        const team = teamOf(i.key);
+        byTeam[team] = byTeam[team] || { wip: 0, blocked: 0 };
+        byTeam[team].wip++;
+        return { key: i.key, summary: i.fields.summary, status: i.fields.status.name, team };
+      });
+      out.wip = { total: issues.length, byStatus, byTeam, epics };
+    });
+
+    // Everything below runs concurrently to stay well under the function timeout.
+    // (blockers reads out.wip.byTeam, which is already populated by the awaited WIP step above.)
+    await Promise.all([
+      guard("pipeline", async () => {
+        out.pipeline = { total: await countOf(`${EPIC} AND status in (${quoted(PIPELINE_STATUSES)})`) };
+      }),
+      guard("rollout", async () => {
+        const r = await jira(`${EPIC} AND status in (${quoted(ROLLOUT_STATUSES)}) ORDER BY status ASC`, ["summary", "status"], 100);
+        const epics = (r.issues || []).map((i) => ({ key: i.key, summary: i.fields.summary, status: i.fields.status.name, team: teamOf(i.key) }));
+        out.rollout = { total: epics.length, epics };
+      }),
+      guard("blockers", async () => {
+        const withFlag = `${EPIC} AND statusCategory != Done AND (labels in (blocked, Blocked) OR flagged = Impediment)`;
+        const labelsOnly = `${EPIC} AND statusCategory != Done AND labels in (blocked, Blocked)`;
+        let r;
+        try { r = await jira(withFlag + " ORDER BY created ASC", ["summary", "status"], 100); }
+        catch (_) { r = await jira(labelsOnly + " ORDER BY created ASC", ["summary", "status"], 100); }
+        const epics = (r.issues || []).map((i) => ({ key: i.key, summary: i.fields.summary, status: i.fields.status.name, team: teamOf(i.key) }));
+        if (out.wip && out.wip.byTeam) epics.forEach((e) => { if (out.wip.byTeam[e.team]) out.wip.byTeam[e.team].blocked++; });
+        out.blockers = { total: epics.length, epics };
+      }),
+      guard("throughput", async () => {
+        const curStart = weekStart(nowRiyadh());
+        const weeks = [];
+        for (let i = 7; i >= 0; i--) {
+          const start = addDays(curStart, -7 * i);
+          const end = addDays(start, 7);
+          weeks.push({ start, end });
+        }
+        const values = await Promise.all(
+          weeks.map((w) => countOf(`${EPIC} AND status CHANGED TO "Done" DURING ("${ymd(w.start)}", "${ymd(w.end)}")`))
+        );
+        out.throughput = {
+          labels: weeks.map((w) => weekLabel(w.start)),
+          values,
+          median: median(values.slice(0, 7)),
+        };
+        out.shippedThisWeek = values[values.length - 1];
+      }),
+    ]);
+
+    send(res, 200, out);
+  } catch (e) {
+    // Never crash the invocation — surface the reason as readable JSON.
+    send(res, 500, { error: "Unhandled: " + (e && e.message ? e.message : String(e)), stack: e && e.stack ? String(e.stack).split("\n").slice(0, 4) : undefined });
+  }
+};
