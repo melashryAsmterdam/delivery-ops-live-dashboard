@@ -215,7 +215,8 @@ function render(d) {
       '<span class="lg"><span class="lgdot" style="background:#9ca3af"></span>Rejected</span></div>';
   }
   // full defect table
-  html += '<div class="scroll" style="margin-top:12px"><table><thead><tr><th>Epic</th><th class="right">Open</th><th class="right">Closed</th><th class="right">Rejected</th><th class="right">Total</th></tr></thead><tbody>';
+  html += '<div class="mhdr" style="margin-top:16px">Defects per epic</div>';
+  html += '<div class="scroll"><table><thead><tr><th>Epic</th><th class="right">Open</th><th class="right">Closed</th><th class="right">Rejected</th><th class="right">Total</th></tr></thead><tbody>';
   (defects.rows || []).forEach(function (r) {
     html += "<tr><td>" + issueLink(r.key) + '</td><td class="right">' + (r.open ? '<b style="color:#dc2626">' + r.open + "</b>" : "0") +
       '</td><td class="right">' + r.closed + '</td><td class="right">' + r.rejected + '</td><td class="right">' + r.total + "</td></tr>";
