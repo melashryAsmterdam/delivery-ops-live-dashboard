@@ -107,8 +107,32 @@ function firstTransitionTo(issue, statusName) {
 }
 const daysBetween = (a, b) => Math.round((a.getTime() - b.getTime()) / 86400000);
 
+// ---- Auth gate (shared password). Active only when AUTH_SECRET + SITE_PASSWORD are set. ----
+const crypto = require("crypto");
+function b64urlToBuf(s) { return Buffer.from(s.replace(/-/g, "+").replace(/_/g, "/"), "base64"); }
+function signB64url(data, secret) {
+  return crypto.createHmac("sha256", secret).update(data).digest("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function getCookie(req, name) {
+  const c = req.headers.cookie || "";
+  const m = c.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+  return m ? decodeURIComponent(m[1]) : null;
+}
+function authed(req) {
+  const secret = process.env.AUTH_SECRET;
+  if (!secret || !process.env.SITE_PASSWORD) return true; // gate off until configured
+  const token = getCookie(req, "auth");
+  if (!token || token.indexOf(".") < 0) return false;
+  const parts = token.split(".");
+  const expected = signB64url(parts[0], secret);
+  if (parts[1].length !== expected.length) return false;
+  try { if (!crypto.timingSafeEqual(Buffer.from(parts[1]), Buffer.from(expected))) return false; } catch (e) { return false; }
+  try { const p = JSON.parse(b64urlToBuf(parts[0]).toString()); return p.exp && p.exp > Date.now(); } catch (e) { return false; }
+}
+
 module.exports = async (req, res) => {
   try {
+    if (!authed(req)) { send(res, 401, { error: "auth required" }); return; }
     const out = { generatedAt: new Date().toISOString(), scope: PROJECTS, browseBase: baseUrl(), errors: [] };
     const guard = async (name, fn) => {
       try { return await fn(); }
