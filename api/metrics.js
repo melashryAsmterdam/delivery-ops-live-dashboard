@@ -45,16 +45,16 @@ function baseUrl() {
   return (process.env.JIRA_BASE_URL || "").replace(/\/+$/, "");
 }
 
-async function jira(jql, fields, maxResults) {
+async function jiraFetch(path, body) {
   if (typeof fetch !== "function") throw new Error("global fetch unavailable (needs Node 18+)");
-  const res = await fetch(baseUrl() + "/rest/api/3/search", {
+  const res = await fetch(baseUrl() + path, {
     method: "POST",
     headers: {
       Authorization: authHeader(),
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify({ jql, maxResults: maxResults == null ? 0 : maxResults, fields: fields || [] }),
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
     const text = await res.text();
@@ -62,9 +62,14 @@ async function jira(jql, fields, maxResults) {
   }
   return res.json();
 }
+// New Jira Cloud search (CHANGE-2046): /rest/api/3/search/jql returns issues (no total);
+// counts come from the dedicated approximate-count endpoint.
+async function jira(jql, fields, maxResults) {
+  return jiraFetch("/rest/api/3/search/jql", { jql, maxResults: maxResults == null ? 100 : maxResults, fields: fields || [] });
+}
 async function countOf(jql) {
-  const r = await jira(jql, [], 0);
-  return r.total || 0;
+  const j = await jiraFetch("/rest/api/3/search/approximate-count", { jql });
+  return j && typeof j.count === "number" ? j.count : 0;
 }
 
 // ---- Sunday-anchored weeks in Asia/Riyadh (UTC+3), day-precision ----
