@@ -17,6 +17,7 @@ async function fetchMetrics(timeoutMs) {
   var t = setTimeout(function () { ctrl.abort(); }, timeoutMs || 40000);
   try {
     var res = await fetch("/api/metrics?_=" + Date.now(), { cache: "no-store", signal: ctrl.signal });
+    if (res.status === 401) { window.location.replace("/login.html"); throw new Error("Not authenticated"); }
     var data = await res.json().catch(function () { return null; });
     if (!res.ok) throw new Error(data && data.error ? data.error : "Request failed (" + res.status + ")");
     if (!data) throw new Error("Empty response from server");
