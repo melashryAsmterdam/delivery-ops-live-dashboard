@@ -14,6 +14,15 @@ KPIs (Throughput 8-wk median, WIP, Pipeline, Rollout, Blockers, Shipped this wee
 chart, an 8-week throughput chart, and live tables for epics in progress, rollout, and blockers —
 across the Core / Labs / Eco epic portfolio (CBPC, CSD, CHOL, CR, CCS, LTRF, ESL, INCEN, RECO, FAN).
 
+### Pages
+- `/` — Weekly Delivery Operations dashboard.
+- `/defects-analysis.html` — Core-team defect analysis (rolling 90-day window). `api/defects.js`.
+- `/defects-epics.html` — **Defects Analysis — Done / Closed epics**: the live counterpart of the
+  frozen Library snapshot. Defects carried by epics that shipped this quarter, split into
+  Open / Closed / Rejected, with refinement, size and per-team resolution-time roll-ups.
+  `api/defects-epics.js`. Optional env: `DEFECTS_RESOLVED_SINCE` (YYYY-MM-DD window start, default =
+  first day of the current quarter) and `DEFECTS_SCAN_CAP` (default 40).
+
 ## Deploy on Vercel (about 5 minutes)
 
 1. **Put this code in a Git repository** you own (GitHub/GitLab/Bitbucket). Push this folder to it.

@@ -2,6 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/metrics.js": { "maxDuration": 60 },
-    "api/defects.js": { "maxDuration": 60 }
+    "api/defects.js": { "maxDuration": 60 },
+    "api/defects-epics.js": { "maxDuration": 60 }
   }
 }
