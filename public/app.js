@@ -202,7 +202,9 @@ function render(d) {
   });
   html += "</div></div>";
 
-  // ---- Open defects by status ----
+  // ---- Open defects by epic ----
+  var sumMap = {};
+  (wip.epics || []).concat(rollout.epics || []).forEach(function (e) { sumMap[e.key] = e.summary; });
   html += '<div class="panel" style="margin-bottom:16px"><h2>Open defects by epic</h2>' +
     '<p class="hint">Bugs/defects under each WIP + Rollout epic (up to ' + (defects.scanned || 0) + ' scanned). ' +
     "<b>" + (defects.totalOpen || 0) + "</b> open across <b>" + (defects.epicsWithOpen || 0) + "</b> epic(s)." +
@@ -214,7 +216,11 @@ function render(d) {
     var maxTot = Math.max.apply(null, [1].concat(withDefects.map(function (r) { return r.total; })));
     html += '<div class="stack">';
     withDefects.forEach(function (r) {
-      html += '<div class="srow"><span class="sk">' + issueLink(r.key) + "</span><div class=\"sbar\" style=\"width:" + pct(r.total, maxTot) + '%">' +
+      var sm = sumMap[r.key] || "";
+      var smShort = sm.length > 46 ? sm.slice(0, 46).replace(/\s+\S*$/, "") + "…" : sm;
+      html += '<div class="srow" style="grid-template-columns:280px 1fr 40px"><span class="sk" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="' + esc(sm) + '">' + issueLink(r.key) +
+        (smShort ? ' <span class="muted" style="font-weight:400">' + esc(smShort) + "</span>" : "") +
+        "</span><div class=\"sbar\" style=\"width:" + pct(r.total, maxTot) + '%">' +
         (r.open ? '<span class="seg" style="flex:' + r.open + ';background:#dc2626" title="Open: ' + r.open + '">' + r.open + "</span>" : "") +
         (r.closed ? '<span class="seg" style="flex:' + r.closed + ';background:#16a34a" title="Closed: ' + r.closed + '">' + r.closed + "</span>" : "") +
         (r.rejected ? '<span class="seg" style="flex:' + r.rejected + ';background:#9ca3af" title="Rejected: ' + r.rejected + '">' + r.rejected + "</span>" : "") +
@@ -226,8 +232,6 @@ function render(d) {
       '<span class="lg"><span class="lgdot" style="background:#9ca3af"></span>Rejected</span></div>';
   }
   // full defect table
-  var sumMap = {};
-  (wip.epics || []).concat(rollout.epics || []).forEach(function (e) { sumMap[e.key] = e.summary; });
   html += '<div class="mhdr" style="margin-top:16px">Defects per epic</div>';
   html += '<div class="scroll"><table><thead><tr><th>Epic</th><th>Summary</th><th class="right">Open</th><th class="right">Closed</th><th class="right">Rejected</th><th class="right">Total</th></tr></thead><tbody>';
   (defects.rows || []).forEach(function (r) {
