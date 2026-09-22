@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Core Team — Defect Analysis — Live</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* defect-specific extras on top of the shared stylesheet */
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 16px; }
+    .chip { border: 1px solid #e6e8eb; background: #fff; border-radius: 999px; padding: 5px 13px; cursor: pointer; font-size: 12px; color: #6b7280; font-weight: 600; }
+    .chip.on { background: #2563eb; color: #fff; border-color: #2563eb; }
+    .ebar { display: inline-block; height: 8px; border-radius: 4px; background: #2563eb; vertical-align: middle; min-width: 2px; }
+    .pri { display: inline-block; border-radius: 999px; padding: 1px 8px; font-size: 11px; font-weight: 600; }
+    .pri-Highest { background: #fee2e2; color: #b91c1c; }
+    .pri-High { background: #ffedd5; color: #c2410c; }
+    .pri-Medium { background: #fef3c7; color: #b45309; }
+    .pri-Low, .pri-Lowest, .pri-None { background: #f3f4f6; color: #6b7280; }
+    .foot { color: #6b7280; font-size: 11px; margin-top: 10px; white-space: pre-wrap; }
+    .warn { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 10px 12px; border-radius: 8px; font-size: 12.5px; margin-bottom: 14px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Core Team — Defect Analysis</h1>
+        <div class="sub"><span class="live"><span class="dot"></span> Live from Jira</span></div>
+      </div>
+      <div class="actions">
+        <a class="snaplink" href="/index.html" title="Back to the delivery operations dashboard">&#8592; Delivery dashboard</a>
+        <span class="refreshed" id="refreshed">&mdash;</span>
+        <button class="refresh" id="refreshBtn" onclick="load()">
+          <span class="ico">&#8635;</span> Refresh
+        </button>
+        <a class="snaplink" href="/api/logout" title="Sign out (only relevant once the password gate is enabled)">Sign out</a>
+      </div>
+    </header>
+    <div class="scope">
+      Scope: <b>CBPC</b> · <b>CCS</b> · <b>CHOL</b> · <b>CR</b> · <b>CSD</b> (Core team) · Bugs over the last <b>90 days</b>.
+      &nbsp;|&nbsp; <b>Resolved</b> = first transition to <b>Ready to Deploy</b>, or the Done transition for bugs that never passed RTD (Jira resolution date is not used).
+    </div>
+
+    <div id="errbox"></div>
+    <div id="content">
+      <div class="loading">Loading live defect data from Jira&hellip;</div>
+    </div>
+  </div>
+
+  <script src="/defects.js"></script>
+</body>
+</html>
