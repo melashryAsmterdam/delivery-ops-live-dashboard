@@ -87,9 +87,10 @@ function median(nums) {
 function cfVal(v) {
   if (v == null) return null;
   if (typeof v === "string") return v;
+  if (typeof v === "number" || typeof v === "boolean") return String(v);
   if (Array.isArray(v)) return v.map(cfVal).filter(Boolean).join(", ");
-  if (v.value) return v.value;
-  if (v.name) return v.name;
+  if (v.value != null) return cfVal(v.value);
+  if (v.name != null) return cfVal(v.name);
   return null;
 }
 function firstTransitionTo(issue, statusName) {
