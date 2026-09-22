@@ -68,13 +68,16 @@ function kpiCard(label, value, meta, accent) {
 }
 
 function refinementPanel(d) {
-  function block(title, b) {
-    return '<div class="panel"><h2>' + esc(title) + "</h2>" +
-      '<div class="value" style="font-size:22px;font-weight:680">' + n1(b.avg) + ' <span class="unit">avg defects / epic</span></div>' +
+  function card(title, b, accent) {
+    return '<div class="card ' + accent + '">' +
+      '<div class="label">' + esc(title) + "</div>" +
+      '<div class="value">' + n1(b.avg) + ' <span class="unit">avg defects / epic</span></div>' +
       '<div class="meta" style="margin-top:6px">' + b.epics + " epics · " + b.defects + " defects</div>" +
       '<div class="meta">' + b.open + " open · " + b.rejected + " rejected</div></div>";
   }
-  return '<div class="grid2">' + block("Refined", d.refinement.refined) + block("DoR not met / unrefined", d.refinement.unrefined) + "</div>";
+  return '<div class="grid2" style="margin-bottom:18px">' +
+    card("Refined", d.refinement.refined, "accent-green") +
+    card("DoR not met / unrefined", d.refinement.unrefined, "accent-red") + "</div>";
 }
 
 function sizePanel(d) {
