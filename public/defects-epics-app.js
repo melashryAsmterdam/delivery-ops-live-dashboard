@@ -95,7 +95,7 @@ function resolutionPanel(d) {
       '</td><td class="right">' + n1(t.avgDays) + "</td></tr>";
   }).join("");
   return '<div class="card accent-violet"><div class="label">Bug resolution time · created &rarr; resolved <span class="muted">· fixed bugs only</span></div>' +
-    '<p class="hint" style="margin-top:6px">Fixed = Closed (Done, excluding Defect Rejected). Days = resolutiondate &minus; created, weighted by bug. Core includes legacy LIF.</p>' +
+    '<p class="meta" style="margin:5px 0 10px">Fixed = Closed (Done, excluding Defect Rejected). Days = resolutiondate &minus; created, weighted by bug. Core includes legacy LIF.</p>' +
     '<div class="scroll"><table><thead><tr><th>Team</th><th class="right">Fixed bugs</th><th class="right">Avg days</th></tr></thead><tbody>' +
     (rows || '<tr><td colspan="3"><span class="muted">No fixed bugs in the window.</span></td></tr>') + "</tbody></table></div></div>";
 }
