@@ -84,7 +84,7 @@ function sizePanel(d) {
   var cells = d.sizeBuckets.map(function (s) {
     return '<div class="sizecell"><span class="sl">' + esc(s.size) + " (" + s.epics + ')</span><span class="sv">' + n1(s.avg) + "</span></div>";
   }).join("");
-  return '<div class="card accent-blue" style="margin-bottom:16px"><div class="label">Average defects by epic size <span class="muted">· defects / epic</span></div>' +
+  return '<div class="card accent-blue"><div class="label">Average defects by epic size <span class="muted">· defects / epic</span></div>' +
     '<p class="hint" style="margin-top:6px">' + d.unsized + ' epics unsized.</p><div class="sizerow">' + cells + "</div></div>";
 }
 
@@ -94,8 +94,8 @@ function resolutionPanel(d) {
     return "<tr" + (strong ? ' style="font-weight:680"' : "") + "><td>" + esc(t.team) + '</td><td class="right">' + t.fixed +
       '</td><td class="right">' + n1(t.avgDays) + "</td></tr>";
   }).join("");
-  return '<div class="panel" style="margin-bottom:16px"><h2>Bug resolution time · created &rarr; resolved <span class="muted">· fixed bugs only</span></h2>' +
-    '<p class="hint">Fixed = Closed (Done, excluding Defect Rejected). Days = resolutiondate &minus; created, weighted by bug. Core includes the legacy LIF project.</p>' +
+  return '<div class="card accent-violet"><div class="label">Bug resolution time · created &rarr; resolved <span class="muted">· fixed bugs only</span></div>' +
+    '<p class="hint" style="margin-top:6px">Fixed = Closed (Done, excluding Defect Rejected). Days = resolutiondate &minus; created, weighted by bug. Core includes legacy LIF.</p>' +
     '<div class="scroll"><table><thead><tr><th>Team</th><th class="right">Fixed bugs</th><th class="right">Avg days</th></tr></thead><tbody>' +
     (rows || '<tr><td colspan="3"><span class="muted">No fixed bugs in the window.</span></td></tr>') + "</tbody></table></div></div>";
 }
@@ -167,8 +167,7 @@ function render() {
   html += "</div>";
 
   html += refinementPanel(d);
-  html += sizePanel(d);
-  html += resolutionPanel(d);
+  html += '<div class="grid2" style="margin-bottom:16px; align-items:start">' + sizePanel(d) + resolutionPanel(d) + "</div>";
   html += openPanel(d);
   html += epicTable(d);
 
