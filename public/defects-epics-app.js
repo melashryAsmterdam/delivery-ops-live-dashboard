@@ -138,7 +138,7 @@ function epicTable(d) {
   }).join("");
   return '<div class="panel" style="margin-bottom:16px"><h2>Bugs per epic <span class="muted">(' + rows.length + ' scanned · click a header to sort)</span></h2>' +
     '<p class="hint">Child bugs/defects of every scanned Done/Closed epic. Rejected (Defect Rejected) is excluded from Closed; Total = Open + Closed + Rejected.</p>' +
-    '<div class="scroll" style="max-height:520px"><table><thead><tr>' +
+    '<div class="scroll" style="max-height:520px"><table><thead id="epicHead"><tr>' +
     th("key", "Epic") + th("summary", "Summary") + th("status", "Status") + th("team", "Team") + th("dri", "DRI") +
     th("size", "Size") + th("refined", "Refinement") + th("open", "Open", true) + th("closed", "Closed", true) +
     th("rejected", "Rejected", true) + th("total", "Total", true) +
@@ -176,7 +176,7 @@ function render() {
 
   setContent(html);
 
-  var head = document.querySelector("#content thead");
+  var head = document.getElementById("epicHead");
   if (head) {
     head.addEventListener("click", function (ev) {
       var th = ev.target.closest(".sortable");
