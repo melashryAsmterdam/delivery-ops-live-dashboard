@@ -84,8 +84,8 @@ function sizePanel(d) {
   var cells = d.sizeBuckets.map(function (s) {
     return '<div class="sizecell"><span class="sl">' + esc(s.size) + " (" + s.epics + ')</span><span class="sv">' + n1(s.avg) + "</span></div>";
   }).join("");
-  return '<div class="panel" style="margin-bottom:16px"><h2>Average defects by epic size <span class="muted">· defects / epic</span></h2>' +
-    '<p class="hint">' + d.unsized + ' epics unsized.</p><div class="sizerow">' + cells + "</div></div>";
+  return '<div class="card accent-blue" style="margin-bottom:16px"><div class="label">Average defects by epic size <span class="muted">· defects / epic</span></div>' +
+    '<p class="hint" style="margin-top:6px">' + d.unsized + ' epics unsized.</p><div class="sizerow">' + cells + "</div></div>";
 }
 
 function resolutionPanel(d) {
