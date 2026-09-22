@@ -102,8 +102,8 @@ function resolutionPanel(d) {
 
 function openPanel(d) {
   if (!d.openEpics.length) {
-    return '<div class="panel" style="margin-bottom:16px"><h2>Open defects on shipped epics</h2>' +
-      '<p class="hint"><span class="muted">None — every scanned Done/Closed epic has its defects resolved.</span></p></div>';
+    return '<div class="card accent-red"><div class="label">Open defects on shipped epics</div>' +
+      '<p class="hint" style="margin-top:6px"><span class="muted">None — every scanned Done/Closed epic has its defects resolved.</span></p></div>';
   }
   var rows = d.openEpics.map(function (e) {
     var byStatus = Object.keys(e.openByStatus).map(function (s) {
@@ -112,8 +112,8 @@ function openPanel(d) {
     return "<tr><td>" + issueLink(e.key) + "</td><td>" + esc(e.summary) + '</td><td><span class="pill">' + esc(e.status) +
       '</span></td><td class="right"><b>' + e.open + "</b></td><td>" + byStatus + "</td></tr>";
   }).join("");
-  return '<div class="panel" style="margin-bottom:16px"><h2>Open defects on shipped epics <span class="muted">(' + d.totalOpen + " across " + d.openEpics.length + ' epics)</span></h2>' +
-    '<p class="hint">Done / Closed epics that still carry at least one unresolved defect.</p>' +
+  return '<div class="card accent-red"><div class="label">Open defects on shipped epics <span class="muted">(' + d.totalOpen + " across " + d.openEpics.length + ' epics)</span></div>' +
+    '<p class="hint" style="margin-top:6px">Done / Closed epics that still carry at least one unresolved defect.</p>' +
     '<div class="scroll"><table><thead><tr><th>Epic</th><th>Summary</th><th>Status</th><th class="right">Open</th><th>By status</th></tr></thead><tbody>' +
     rows + "</tbody></table></div></div>";
 }
@@ -167,8 +167,9 @@ function render() {
   html += "</div>";
 
   html += refinementPanel(d);
-  html += '<div class="grid2" style="margin-bottom:16px; align-items:start">' + sizePanel(d) + resolutionPanel(d) + "</div>";
-  html += openPanel(d);
+  html += '<div class="grid2" style="margin-bottom:16px; align-items:stretch">' +
+    '<div style="display:flex; flex-direction:column; gap:14px">' + sizePanel(d) + openPanel(d) + "</div>" +
+    resolutionPanel(d) + "</div>";
   html += epicTable(d);
 
   html += '<div class="foot">Scope: epics Done/Closed with resolutiondate on or after ' + esc(d.since) +
