@@ -66,7 +66,7 @@ function epicTable(epics, withTeam, withDRI) {
   epics = epics || [];
   if (!epics.length) return '<p class="muted" style="padding:8px">None.</p>';
   var h = "<table><thead><tr><th>Epic</th><th>Summary</th><th>Status</th>" +
-    (withTeam ? "<th>Team</th>" : "") + (withDRI ? "<th>DRI</th>" : "") + "</tr></thead><tbody>";
+    (withTeam ? "<th>Team</th>" : "") + (withDRI ? "<th>Assignee</th>" : "") + "</tr></thead><tbody>";
   epics.forEach(function (e) {
     h += "<tr><td>" + issueLink(e.key) + "</td><td>" + esc(e.summary) + "</td>" +
       '<td><span class="pill">' + esc(e.status) + "</span></td>" + (withTeam ? "<td>" + esc(e.team) + "</td>" : "") +
