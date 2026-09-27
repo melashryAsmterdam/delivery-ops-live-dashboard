@@ -70,7 +70,7 @@ function epicTable(epics, withTeam, withDRI) {
   epics.forEach(function (e) {
     h += "<tr><td>" + issueLink(e.key) + "</td><td>" + esc(e.summary) + "</td>" +
       '<td><span class="pill">' + esc(e.status) + "</span></td>" + (withTeam ? "<td>" + esc(e.team) + "</td>" : "") +
-      (withDRI ? "<td>" + (e.dri ? esc(e.dri) : '<span class="muted">Unassigned</span>') + "</td>" : "") + "</tr>";
+      (withDRI ? "<td>" + (e.dri ? esc(e.dri) : '<span class="muted">—</span>') + "</td>" : "") + "</tr>";
   });
   return h + "</tbody></table>";
 }
