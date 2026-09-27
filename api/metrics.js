@@ -150,7 +150,7 @@ module.exports = async (req, res) => {
     // WIP + Rollout first — their epic lists seed bug-fixing, the defect scan, and the by-team roll-up.
     await Promise.all([
       guard("wip", async () => {
-        const r = await jira(`${EPIC} AND status in (${quoted(WIP_STATUSES)}) ORDER BY status ASC`, ["summary", "status"], 100);
+        const r = await jira(`${EPIC} AND status in (${quoted(WIP_STATUSES)}) ORDER BY status ASC`, ["summary", "status", "assignee"], 100);
         const issues = r.issues || [];
         const byStatus = WIP_STATUSES.map((s) => ({
           status: s,
@@ -162,7 +162,7 @@ module.exports = async (req, res) => {
         const epics = issues.map((i) => {
           const team = teamOf(i.key);
           if (byTeam[team]) byTeam[team].wip++;
-          return { key: i.key, summary: i.fields.summary, status: i.fields.status.name, team };
+          return { key: i.key, summary: i.fields.summary, status: i.fields.status.name, team, dri: i.fields.assignee ? i.fields.assignee.displayName : null };
         });
         out.wip = { total: issues.length, byStatus, byTeam, epics };
       }),

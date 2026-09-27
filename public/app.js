@@ -62,13 +62,15 @@ function card(cls, label, value, unit, meta) {
     (meta ? '<div class="meta">' + meta + "</div>" : "") + "</div>";
 }
 
-function epicTable(epics, withTeam) {
+function epicTable(epics, withTeam, withDRI) {
   epics = epics || [];
   if (!epics.length) return '<p class="muted" style="padding:8px">None.</p>';
-  var h = "<table><thead><tr><th>Epic</th><th>Summary</th><th>Status</th>" + (withTeam ? "<th>Team</th>" : "") + "</tr></thead><tbody>";
+  var h = "<table><thead><tr><th>Epic</th><th>Summary</th><th>Status</th>" +
+    (withTeam ? "<th>Team</th>" : "") + (withDRI ? "<th>DRI</th>" : "") + "</tr></thead><tbody>";
   epics.forEach(function (e) {
     h += "<tr><td>" + issueLink(e.key) + "</td><td>" + esc(e.summary) + "</td>" +
-      '<td><span class="pill">' + esc(e.status) + "</span></td>" + (withTeam ? "<td>" + esc(e.team) + "</td>" : "") + "</tr>";
+      '<td><span class="pill">' + esc(e.status) + "</span></td>" + (withTeam ? "<td>" + esc(e.team) + "</td>" : "") +
+      (withDRI ? "<td>" + (e.dri ? esc(e.dri) : '<span class="muted">Unassigned</span>') + "</td>" : "") + "</tr>";
   });
   return h + "</tbody></table>";
 }
@@ -174,7 +176,7 @@ function render(d) {
   // ---- Epics in progress + Rollout ----
   html += '<div class="grid2">';
   html += '<div class="panel"><h2>Epics in progress <span class="muted">(' + wip.total + ')</span></h2>' +
-    '<div class="scroll">' + epicTable(wip.epics, true) + "</div></div>";
+    '<div class="scroll">' + epicTable(wip.epics, true, true) + "</div></div>";
   html += '<div class="panel"><h2>Rollout <span class="muted">(' + rollout.total + ')</span></h2>' +
     '<div class="scroll">' + epicTable(rollout.epics, true) + "</div></div>";
   html += "</div>";
